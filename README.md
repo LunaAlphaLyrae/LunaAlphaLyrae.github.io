@@ -2,7 +2,7 @@
 - 👀 I’m interested in active M dwarf stars and RV Tauri variables
 - 🌱 I’m currently learning light curve analyses
 - 💞️ I’m looking to collaborate on Swift/UVOT projects
-- 🤘 [About Me](https://lunaalphalyrae.github.io/laura.d.vega/), [NASA-Goddard's Early Career Scientist Spotlight](https://science.gsfc.nasa.gov/600/ECSS/Laura-Vega.html)
+- 🤘 [Website](https://lunaalphalyrae.github.io/), [NASA-Goddard's Early Career Scientist Spotlight](https://science.gsfc.nasa.gov/600/ECSS/Laura-Vega.html)
 - 📫 How to reach me laura.d.vega@nasa.gov; [NASA Profile](https://science.gsfc.nasa.gov/sed/bio/laura.d.vega)
 - 🌈 Pronouns: ella/her
 - 😅 Fun Fact: I'm learning how to use GitHub!

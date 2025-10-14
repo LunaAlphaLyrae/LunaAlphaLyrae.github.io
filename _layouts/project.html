@@ -30,7 +30,7 @@ layout: default
     <div class="project-gallery">
       {% for img in page.gallery %}
         <a href="{{ img | relative_url }}" class="project-gallery-item">
-          <img src="{{ img | relative_url }}" alt="{{ page.title }} image {{ forloop.index }}" />
+          <img src="{{ img | relative_url }}" alt="{{ page.title }} image {{ forloop.index }}" loading="lazy" decoding="async" />
         </a>
       {% endfor %}
     </div>

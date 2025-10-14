@@ -18,6 +18,7 @@
                 {% if p.ads_url %} | <a href="{{ p.ads_url }}" target="_blank" rel="noopener">ADS</a>{% endif %}
                 {% if p.pdf_url %} | <a href="{{ p.pdf_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
                 {% if p.code_url %} | <a href="{{ p.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
+                {% if p.bibtex %} | <button class="button" data-bibtex="{{ p.bibtex | escape }}" onclick="copyBibtex(this)">Copy BibTeX</button>{% endif %}
               </div>
             </li>
           {% endif %}
@@ -27,4 +28,21 @@
   {% else %}
     <p>Add your publications in <code>_data/publications.yml</code>.</p>
   {% endif %}
+  <script>
+    function copyBibtex(btn) {
+      const text = btn.getAttribute('data-bibtex');
+      if (!navigator.clipboard) {
+        const area = document.createElement('textarea');
+        area.value = text;
+        document.body.appendChild(area);
+        area.select();
+        try { document.execCommand('copy'); btn.textContent = 'Copied'; }
+        catch(e) { btn.textContent = 'Failed'; }
+        finally { document.body.removeChild(area); }
+        return;
+      }
+      navigator.clipboard.writeText(text).then(() => btn.textContent = 'Copied').catch(() => btn.textContent = 'Failed');
+      setTimeout(() => btn.textContent = 'Copy BibTeX', 1600);
+    }
+  </script>
 </article>

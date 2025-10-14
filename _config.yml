@@ -4,6 +4,21 @@ baseurl: ""
 description: Astrophysicist & Postdoctoral Researcher
 lang: en
 
+# Site visuals and links
+logo: /images/laura_vega_profile.jpeg
+resume_url: https://github.com/LunaAlphaLyrae/Laura_Vega_CV/blob/build/Laura_Vega_CV.pdf
+
+# Contact form (Formspree). Set to your form ID to enable.
+formspree_id:
+
+# Social/SEO
+twitter:
+  username: LunaAlphaLyrae
+social:
+  name: Laura D. Vega
+  links:
+    - https://github.com/LunaAlphaLyrae
+
 # GitHub Pages-compatible plugins
 plugins:
   - jekyll-seo-tag

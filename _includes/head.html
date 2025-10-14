@@ -6,3 +6,18 @@
 <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}" />
 <noscript><link rel="stylesheet" href="{{ '/assets/css/noscript.css' | relative_url }}" /></noscript>
 {% seo %}
+{% if site.logo %}<link rel="icon" href="{{ site.logo | relative_url }}" />{% endif %}
+<meta name="theme-color" content="#0b1020" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ '/images/og-card.png' | relative_url }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.logo | relative_url }}",
+  "sameAs": [{% if site.social and site.social.links %}{% for link in site.social.links %}"{{ link }}"{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}]
+}
+</script>

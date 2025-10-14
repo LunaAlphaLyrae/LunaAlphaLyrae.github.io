@@ -1,5 +1,28 @@
 <article id="contact">
   <h2 class="major">Contact</h2>
+  {% if site.formspree_id %}
+    <form action="https://formspree.io/f/{{ site.formspree_id }}" method="POST" class="contact-form">
+      <div class="fields">
+        <div class="field half">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="field half">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </div>
+      </div>
+      <ul class="actions">
+        <li><button type="submit" class="primary">Send</button></li>
+        <li><input type="reset" value="Clear" /></li>
+      </ul>
+    </form>
+    <p class="contact-hint">Prefer email? See below.</p>
+  {% endif %}
   <p>
     <b>Email:</b><br />
     laura.d.vega@nasa.gov<br />
@@ -19,16 +42,16 @@
       <a href="https://twitter.com/LunaAlphaLyrae" class="icon fa-twitter"><span class="label">Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.twitch.tv/LunaAlphaLyrae" class="icon fa-twitch"><span class="label">Twitch</span></a>
+      <a href="https://www.twitch.tv/LunaAlphaLyrae" class="icon fa-twitch" rel="me"><span class="label">Twitch</span></a>
     </li>
     <li>
-      <a href="https://www.instagram.com/luna.alphalyrae/" class="icon fa-instagram"><span class="label">Instagram</span></a>
+      <a href="https://www.instagram.com/luna.alphalyrae/" class="icon fa-instagram" rel="me"><span class="label">Instagram</span></a>
     </li>
     <li>
-      <a href="https://github.com/LunaAlphaLyrae/" class="icon fa-github"><span class="label">GitHub</span></a>
+      <a href="https://github.com/LunaAlphaLyrae/" class="icon fa-github" rel="me"><span class="label">GitHub</span></a>
     </li>
     <li>
-      <a href="https://www.linkedin.com/in/lauradanielavega/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a>
+      <a href="https://www.linkedin.com/in/lauradanielavega/" class="icon fa-linkedin" rel="me"><span class="label">LinkedIn</span></a>
     </li>
     <li>
       <a href="https://orcid.org/0000-0002-5928-2685/" class="fa-brands fa-orcid"><span class="label">iD</span></a>

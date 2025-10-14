@@ -10,7 +10,7 @@
     <b>Current Project:</b> Simultanous Multiwavelength Observations of M Dwarf Stars
   </p>
   <span class="image main">
-    <img src="{{ '/images/aumic_spot_modulation_flares.gif' | relative_url }}" alt="AU Mic flares light curve animation" width="600" height="338" class="center" />
+    <img src="{{ '/images/aumic_spot_modulation_flares.gif' | relative_url }}" alt="AU Mic flares light curve animation" width="600" height="338" class="center" loading="lazy" decoding="async" />
   </span>
   <p>
     The gif shows an animation, and TESS light curve, of a well know M-dwarf star AU-Mic, showing star spot modulation and flares. Credit: NASA/JPL
@@ -20,7 +20,7 @@
     <b><a href="https://ui.adsabs.harvard.edu/abs/2021PhDT.........3V/abstract" target="_blank" rel="noopener">Dissertation</a> Project:</b> RV Tauri Variables
   </p>
   <span class="image main">
-    <img src="{{ '/images/umon_rvb_lightcurve.gif' | relative_url }}" alt="RVb light curve animation" width="600" height="338" class="center" />
+    <img src="{{ '/images/umon_rvb_lightcurve.gif' | relative_url }}" alt="RVb light curve animation" width="600" height="338" class="center" loading="lazy" decoding="async" />
   </span>
   <p>
     The gif shows an animation, and AAVSO light curve, of the second brightest RV Tauri variable, U Monocerotis, a system of a pulsating post-AGB star and smaller stellar companion orbiting each other within a large circumbinary disk of dust. Credit: NASA’s Goddard Space Flight Center/Chris Smith (USRA/GESTAR). The light curve shows the evolved star's deep and shallow minima due to pulsations, as well as the pulsating star being eclipsed by the disk, also known as the RVb phenomonon.
@@ -28,14 +28,34 @@
   </p>
 </article>
 
-<!-- Research Group subsection moved under Research -->
-<article>
-  <h3>Research Group</h3>
-  <span class="image main">
-    <img src="{{ '/images/Stellar flares group detail.jpg' | relative_url }}" alt="Flares Group at NASA Goddard" />
-  </span>
-  <span class="image main">
-    <img src="{{ '/images/Stellar flares group wavelenths.jpg' | relative_url }}" alt="Flares group wavelength" />
-  </span>
-  <p><b>About:</b> This page is under construction.</p>
-</article>
+<p>
+  <a class="button" href="{{ '/research-group/' | relative_url }}">Visit the Research Group page</a>
+  for people, collaborations, and group activities.
+</p>
+
+<h3>Featured Projects</h3>
+{% assign featured = site.projects | where: 'featured', true %}
+{% if featured.size == 0 %}
+  {% assign featured = site.projects | slice: 0, 3 %}
+{% endif %}
+{% if featured and featured.size > 0 %}
+  <div class="projects-grid">
+    {% for project in featured %}
+      <a class="project-card" href="{{ project.url | relative_url }}">
+        {% if project.hero_image %}
+          <img src="{{ project.hero_image | relative_url }}" alt="{{ project.title }} image" class="project-hero" loading="lazy" decoding="async" />
+        {% endif %}
+        <div class="project-content">
+          <h4 class="project-title">{{ project.title }}</h4>
+          {% if project.summary %}<p class="project-summary">{{ project.summary }}</p>{% endif %}
+          <div class="project-meta">
+            {% if project.year %}<span class="project-year">{{ project.year }}</span>{% endif %}
+            {% if project.tech %}<span class="project-tech">{{ project.tech | join: ', ' }}</span>{% endif %}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>Add project files to <code>_projects/</code> and set <code>featured: true</code> to showcase them here.</p>
+{% endif %}

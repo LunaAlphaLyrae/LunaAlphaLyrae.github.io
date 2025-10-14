@@ -1,0 +1,21 @@
+items:
+  - institution: University of Maryland, College Park
+    degree: Postdoctoral Research
+    years: 2022–present
+    details: Heising-Simons Foundation Astrophysics Postdoctoral Fellow (CRESST II)
+    link: https://www.astro.umd.edu/
+  - institution: Vanderbilt University
+    degree: Ph.D., Astrophysics
+    years: 2017–2021
+    details: Dissertation focused on RV Tauri variables and disk obscuration
+    link: https://www.vanderbilt.edu/
+  - institution: Fisk University
+    degree: M.A., Physics
+    years: 2015–2017
+    details: Fisk-Vanderbilt Master’s-to-PhD Bridge Program
+    link: https://www.fisk.edu/
+  - institution: University of Texas at San Antonio
+    degree: B.S., Physics
+    years: 2010–2013
+    details: First-generation college graduate
+    link: https://www.utsa.edu/

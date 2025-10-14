@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="project-header">
+    <h1 class="major">{{ page.title }}</h1>
+    {% if page.repo_url %}
+      <p><a class="button" href="{{ page.repo_url }}" target="_blank" rel="noopener">View Repository</a>{% if page.live_url %} · <a class="button" href="{{ page.live_url }}" target="_blank" rel="noopener">Live Demo</a>{% endif %}</p>
+    {% endif %}
+    {% if page.summary %}<p class="project-summary">{{ page.summary }}</p>{% endif %}
+    <div class="project-meta">
+      {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+      {% if page.status %} · <span>{{ page.status }}</span>{% endif %}
+      {% if page.tech %} · <span>{{ page.tech | join: ', ' }}</span>{% endif %}
+      {% if page.role %} · <span>{{ page.role }}</span>{% endif %}
+    </div>
+  </header>
+  {% if page.hero_image %}
+    <span class="image main">
+      <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }} hero image" />
+    </span>
+  {% endif %}
+
+  <div class="project-body">
+    {{ content }}
+  </div>
+
+  {% if page.gallery and page.gallery.size > 0 %}
+    <h3>Gallery</h3>
+    <div class="project-gallery">
+      {% for img in page.gallery %}
+        <a href="{{ img | relative_url }}" class="project-gallery-item">
+          <img src="{{ img | relative_url }}" alt="{{ page.title }} image {{ forloop.index }}" />
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>

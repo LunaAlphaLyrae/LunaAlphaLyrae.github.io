@@ -1,0 +1,30 @@
+<article id="publications">
+  <h2 class="major">Publications</h2>
+  {% assign pubs = site.data.publications.items | sort: 'year' | reverse %}
+  {% if pubs and pubs.size > 0 %}
+    {% assign years = pubs | map: 'year' | uniq %}
+    {% for y in years %}
+      <h3>{{ y }}</h3>
+      <ul class="publications">
+        {% for p in pubs %}
+          {% if p.year == y %}
+            <li class="publication-item">
+              <div class="pub-title">{{ p.title }}</div>
+              <div class="pub-authors">{{ p.authors }}</div>
+              <div class="pub-venue">{{ p.venue }}</div>
+              <div class="pub-links">
+                {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+                {% if p.arxiv_url %} | <a href="{{ p.arxiv_url }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
+                {% if p.ads_url %} | <a href="{{ p.ads_url }}" target="_blank" rel="noopener">ADS</a>{% endif %}
+                {% if p.pdf_url %} | <a href="{{ p.pdf_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+                {% if p.code_url %} | <a href="{{ p.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>Add your publications in <code>_data/publications.yml</code>.</p>
+  {% endif %}
+</article>

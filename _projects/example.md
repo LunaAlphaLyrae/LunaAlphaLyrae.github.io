@@ -12,6 +12,7 @@ gallery:
 year: 2025
 status: active
 role: Lead researcher & developer
+featured: true
 ---
 
 This project explores AU Mic flares with synchronized UV, X-ray, and optical data to quantify energy partition across wavelengths and time.

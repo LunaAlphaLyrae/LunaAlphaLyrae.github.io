@@ -585,3 +585,13 @@
 	};
 
 })(jQuery);
+
+// Respect prefers-reduced-motion by disabling smooth scroll animations if present
+(function() {
+  try {
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReduced.matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  } catch (e) {}
+})();

@@ -1,0 +1,92 @@
+:root {
+  --accent: #8b5cf6; /* violet */
+  --accent-2: #06b6d4; /* cyan */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --text-glow: 0 0 0.5rem rgba(139, 92, 246, 0.6), 0 0 1rem rgba(6, 182, 212, 0.4);
+}
+
+/* Accent links and buttons */
+a, .button {
+  color: var(--accent);
+}
+
+a:hover, .button:hover {
+  color: var(--accent-2);
+}
+
+/* Focus visibility */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+  box-shadow: var(--text-glow);
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  -webkit-backdrop-filter: saturate(160%) blur(6px);
+  backdrop-filter: saturate(160%) blur(6px);
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25), var(--text-glow);
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none; }
+  .project-card:hover { transform: none; }
+}
+
+.project-hero {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 0.85rem 1rem 1rem;
+}
+
+.project-title {
+  margin: 0 0 0.25rem 0;
+}
+
+.project-summary {
+  margin: 0 0 0.5rem 0;
+  opacity: 0.9;
+}
+
+.project-meta {
+  font-size: 0.9em;
+  opacity: 0.8;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Subtle background gradient overlay to add a futuristic feel */
+#bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(139, 92, 246, 0.18), transparent 60%),
+              radial-gradient(900px 600px at 90% 80%, rgba(6, 182, 212, 0.18), transparent 60%);
+}

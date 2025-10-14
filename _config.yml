@@ -1,0 +1,36 @@
+title: Laura D Vega
+url: https://LunaAlphaLyrae.github.io
+baseurl: ""
+description: Astrophysicist & Postdoctoral Researcher
+lang: en
+
+# GitHub Pages-compatible plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+# Exclusions
+exclude:
+  - README.txt
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock

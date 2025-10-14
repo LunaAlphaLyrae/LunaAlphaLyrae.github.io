@@ -28,34 +28,3 @@
   </p>
 </article>
 
-<p>
-  <a class="button" href="{{ '/research-group/' | relative_url }}">Visit the Research Group page</a>
-  for people, collaborations, and group activities.
-</p>
-
-<h3>Featured Projects</h3>
-{% assign featured = site.projects | where: 'featured', true %}
-{% if featured.size == 0 %}
-  {% assign featured = site.projects | slice: 0, 3 %}
-{% endif %}
-{% if featured and featured.size > 0 %}
-  <div class="projects-grid">
-    {% for project in featured %}
-      <a class="project-card" href="{{ project.url | relative_url }}">
-        {% if project.hero_image %}
-          <img src="{{ project.hero_image | relative_url }}" alt="{{ project.title }} image" class="project-hero" loading="lazy" decoding="async" />
-        {% endif %}
-        <div class="project-content">
-          <h4 class="project-title">{{ project.title }}</h4>
-          {% if project.summary %}<p class="project-summary">{{ project.summary }}</p>{% endif %}
-          <div class="project-meta">
-            {% if project.year %}<span class="project-year">{{ project.year }}</span>{% endif %}
-            {% if project.tech %}<span class="project-tech">{{ project.tech | join: ', ' }}</span>{% endif %}
-          </div>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
-{% else %}
-  <p>Add project files to <code>_projects/</code> and set <code>featured: true</code> to showcase them here.</p>
-{% endif %}

@@ -109,10 +109,11 @@ a:hover, .button:hover {
 
 /* About page image fix */
 .about-image {
-  width: 100%;
-  height: auto;
+  width: 100%;       /* scale with container */
+  height: auto;      /* maintain aspect ratio */
   object-fit: contain;
   display: block;
-  max-width: 400px; /* optional: limit size */
-  margin: 0 auto;   /* optional: center horizontally */
+  max-width: 600px;  /* optional: limit image size */
+  margin: 0 auto;    /* optional: center horizontally */
 }
+

@@ -117,3 +117,12 @@ a:hover, .button:hover {
   margin: 0 auto;    /* optional: center horizontally */
 }
 
+/* Research GIFs responsive fix */
+.research-gif {
+  width: 100%;       /* scale with container */
+  height: auto;      /* maintain aspect ratio */
+  object-fit: contain;
+  display: block;
+  max-width: 600px;  /* optional: limit image width */
+  margin: 0 auto;    /* center horizontally */
+}

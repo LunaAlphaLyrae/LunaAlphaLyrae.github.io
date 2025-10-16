@@ -117,7 +117,7 @@ a:hover, .button:hover {
   margin: 0 auto;    /* optional: center horizontally */
 }
 
-/* Research page GIFs responsive fix */
+/* Only apply to Research page */
 #research .research-gif {
   width: 100%;
   height: auto;
@@ -126,4 +126,5 @@ a:hover, .button:hover {
   max-width: 600px;
   margin: 0 auto;
 }
+
 
